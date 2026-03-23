@@ -1,16 +1,115 @@
-# React + Vite
+# Hormuz Watch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time maritime vessel tracking dashboard for the Strait of Hormuz. Built with React and Leaflet, it provides live vessel positions, traffic analytics, port intelligence, and detailed ship profiles — all in a dark-first, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Interactive Map** — Live vessel positions rendered on a Leaflet map with animated movement for underway ships
+- **Vessel Filtering** — Filter by vessel type (tanker, cargo, LNG, etc.) or flag state
+- **Traffic Analytics** — Charts for vessel type distribution, flag breakdown, speed profiles, and hourly transit data
+- **Vessel Details Panel** — Full ship profile with status, speed, heading, and vessel photo
+- **Ports Panel** — Port activity and status overview
+- **News Panel** — Maritime news feed
+- **Side Navigation** — Quick access to Compliance, Pricing, Data Services, Solutions, Notifications, Support, and Profile panels
+- **Dark / Light Mode** — Toggle between themes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technology |
+|---|---|
+| Framework | React 19 |
+| Build Tool | Vite 7 |
+| Map | Leaflet + react-leaflet |
+| Charts | Chart.js + react-chartjs-2 |
+| Linting | ESLint 9 |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ferzxdigitals-gif/Hormuz-Watch_files.git
+cd Hormuz-Watch_files
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The output will be in the `dist/` folder.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## Project Structure
+
+```
+├── public/
+│   ├── ships/          # Vessel photos by type
+│   └── header-bg.png
+├── src/
+│   ├── components/
+│   │   ├── panels/     # VesselDetails, Ports, News, Profile panels
+│   │   ├── Charts.jsx
+│   │   ├── FilterBar.jsx
+│   │   ├── Header.jsx
+│   │   ├── ShipMap.jsx
+│   │   ├── ShipSilhouette.jsx
+│   │   ├── SideNav.jsx
+│   │   ├── TrafficAnalytics.jsx
+│   │   └── VesselTable.jsx
+│   ├── data/
+│   │   ├── vessels.js      # Vessel data generator
+│   │   ├── shipPhotos.js
+│   │   └── shipSvgs.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server with HMR |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+
+---
+
+## License
+
+Private project — all rights reserved.
